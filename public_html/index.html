@@ -1,16 +1,86 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+        <link type="text/css" rel="stylesheet" href="css/ToDo.css">
+        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+        <link rel="icon" href="data:;base64,iVBORwOKGgo=">
+
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
-    <body>
-        <div>TODO write content</div>
+    <body background="hi_1.jpg">
+        <header>
+            <nav>
+                <div class="nav-wrapper green lighten-1">
+                    <a href="#" class="brand-logo center fancy ">To Do List</a>
+                    <ul class="left">
+                        <li><a href="index.html">Home</a></li>
+                    </ul>
+                    <ul class = "right ">
+                        <li><a href="signin.html">Login</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <main >
+            <div class="container">
+                <div class="row">
+                    <h1 class="center-align supa">To Do</h1>
+                </div>
+                <div class="row">
+                    <div class="col s12 main-container">
+
+                    </div>
+                    </div>
+            </div>
+        </main>
+        <footer class="page-footer green lighten-1">
+            <div class="container">
+                <p><a href="index.html"><img style="padding-left: 800px; position: relative; display: block;
+                                             bottom: 10px;
+                                             right: 10px;
+                                             position: absolute;
+                                             z-index: 2;
+                                             position: fixed;" src="img/back-to-top.png" alt="OUSHD"/></a></p>
+                
+            </div>
+            <div class="footer-copyright center-align">
+                <div class="contianer">
+                    @2016 Cannon Nielsen
+                </div>
+            </div>
+        </footer>
+
+        <!--Import jQuery before materialize.js-->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="libs/backendless.js"></script>
+        <script type="text/javascript" src="js/ToDo.js"></script>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+        <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.min.js'></script>
+        <script type="text/javascript" src="js/handlebars-v4.0.5.js"></script>
+
+        <script id="blogs-template" type="text/x-handlebars-template">
+            {{#each posts}}
+            {{#if done}}        
+            <div class="card-panel red lighten-2 col s6">
+                    <h2 class="blog-post-title fancyier">{{title}}</h2>
+                    <p class="blog-post-meta fancy">At {{format created }} by {{authorEmail}}</p>
+                    <div class= "fancy">{{{content}}}</div>
+                    <button class="material-icon trash right blue" type="submit" name="action" data={{objectId}}>Delete</button>
+                    <button class="material-icon done right blue" type="submit" name="action" data={{objectId}}>Complete</button>
+                </div>
+        {{else}}    
+            <div class="card-panel blue lighten-3 col s6">
+                    <h2 class="blog-post-title fancyier">{{title}}</h2>
+                    <p class="blog-post-meta fancy">At {{format created }} by {{authorEmail}}</p>
+                    <div class= "fancy">{{{content}}}</div>
+                    <button class="material-icon trash right blue" type="submit" name="action" data={{objectId}}>Delete</button>
+                    <button class="material-icon done right blue" type="submit" name="action" data={{objectId}}>Complete</button>
+                </div>
+        {{/if}}
+    {{/each}}
+        </script>
     </body>
 </html>

@@ -1,0 +1,43 @@
+.fancy {
+    font-family: 'Kaushan Script', cursive;
+    font-size: 22px;
+}
+.supa {
+    font-family: 'Kaushan Script', cursive;
+    font-size: 48px;
+}
+body {
+    display:  flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+main{
+    flex: 1 0 auto;
+}
+.fancyier {
+    font-family: 'Kaushan Script', cursive;
+    font-size: 15px;
+}
+header{
+    border-bottom: 5px solid black;
+}
+body{
+    border-top: 5px solid black;
+    border-left: 5px solid black;
+    border-right: 5px solid black;
+}
+ 
+body{
+   display: flex;
+   min-height: 100vh;
+   flex-direction:column;
+ // background-image: pics/images.jpg ;
+    background-image: url("http://1fotonin.com/image.php?pic=/data/wallpapers/27/WDF_746284.jpg");
+   background-repeat: repeat-x;
+  background-size:100% 100%;
+   top: 0;
+   left: 0;
+   width: 99%;
+   height: 100%;
+   background-color: black;
+}
